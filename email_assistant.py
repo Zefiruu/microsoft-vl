@@ -3,19 +3,22 @@
 
 
 # Imports #
-import sys, pyperclip
+import sys, pyperclip, shelve
 
-# Variables #
-OP = '''
-Hello Team,
 
-Thank you for placing your request with us.
-'''
-END = '''
-Best Regards,
-AGENT
-Microsoft Volume Licensing
-'''
+# Agent name #
+agent_data = shelve.open('agent_data')
+if 'agent' in agent_data:
+    agent = agent_data['agent']
+else:
+    agent = input('As this is your first time using this script, tell me your name: \n')
+    agent_data['agent'] = agent
+
+# Emails Section #
+
+OP = 'Hello Team,\n\nThank you for placing your request with us.'
+END = 'Best Regards,\n'+ agent + '\nMicrosoft Volume Licensing'
+
 EMAILS = {
 # First Notification - Reminder
 'r1':'Reminder 1', 
@@ -40,7 +43,19 @@ Once the MOF is updated and resubmitted we will gladly proceed with your reqeues
 # Logic #
 
 if len(sys.argv) < 2:
-    print('Correct Usage:\n ./email_assistant.py [shortcut]')
+
+    print('''
+r1 -- First Reminder [24h after escalating the issue to Partner]
+r2 -- Last notification/Closing e-mail
+price -- Incorrect price used in MOF
+
+
+'''
++agent+ ''', please use the script correctly
+
+Correct Usage:
+    ./email_assistant.py [shortcut]
+''')
     sys.exit()
 else:
     shortcut = sys.argv[1]
