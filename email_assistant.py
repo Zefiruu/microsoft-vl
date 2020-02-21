@@ -21,16 +21,22 @@ END = 'Best Regards,\n'+ agent + '\nMicrosoft Volume Licensing'
 
 EMAILS = {
 # First Notification - Reminder
-'r1':'Reminder 1', 
+'r1':
+
+'Reminder 1', 
 
 # Last Notification - Closing email
-'r2':'Reminder 2', 
+'r2':
+
+'Reminder 2', 
 
 # MOF - Incorrect Price
-'price': OP + ''' 
-Please note whilst processing your request we encountered an issue which requires your attention. The Unit Price for the SKUs mentioned bellow are currently not matching our system:
+'price':
 
-## SKU ##
+OP + ''' 
+Please note that whilst processing your request we encountered an issue which requires your attention. The Unit Price for the SKUs mentioned bellow are currently not matching our system:
+
+## SKU CHAAANGE MEEE OR LOOK SILLY ##
 
 We kindly ask you to update and resubmit the MOF amending the issue.
 
@@ -44,9 +50,10 @@ Once the MOF is updated and resubmitted we will gladly proceed with your reqeues
 
 if len(sys.argv) < 2:
 
+# Instructions to User
     print('''
 r1 -- First Reminder [24h after escalating the issue to Partner]
-r2 -- Last notification/Closing e-mail
+r2 -- Last notification/Closing e-mail of 3 strike rule
 price -- Incorrect price used in MOF
 
 
