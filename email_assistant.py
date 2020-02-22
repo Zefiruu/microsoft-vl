@@ -16,7 +16,7 @@ else:
 
 # Emails Section #
 
-OP = 'Hello Team,\n\nThank you for placing your request with us.'
+OP = 'Hello Team,\n\nThank you for placing your request with us.\n'
 END = 'Best Regards,\n'+ agent + '\nMicrosoft Volume Licensing'
 
 EMAILS = {
@@ -34,7 +34,8 @@ EMAILS = {
 'price':
 
 OP + ''' 
-Please note that whilst processing your request we encountered an issue which requires your attention. The Unit Price for the SKUs mentioned bellow are currently not matching our system:
+Please note that whilst processing your request we encountered an issue which requires your attention.
+The Unit Price for the SKUs mentioned bellow are currently not matching our system:
 
 ## SKU CHAAANGE MEEE OR LOOK SILLY ##
 
