@@ -2,9 +2,11 @@
 
 
 This repository contains scripts created to facilitate my daily activities as a Transactional Specialist at Microsoft.
-__
-__
-__
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+* price_validation.py - Retrieves Special Pricing data from explore.ms and exports to 'Validation Sheet'. 
 
 * tenant_creation.py - Script adding the CLT to the start of the enrolments, prior to uploading to MAGNUM.
 
